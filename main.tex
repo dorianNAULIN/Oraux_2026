@@ -1,14 +1,204 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt,a4paper]{article}
 
-\title{Oraux_2026}
-\author{Moi }
-\date{May 2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm, vmargin=2.5cm}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\urlstyle{same}
+\setlist[enumerate]{itemsep=0.35em, topsep=0.5em}
+
+\title{Oraux X CPES 2026}
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\tableofcontents
+\newpage
+
+\section{Badis --- Majeure Maths, Dauphine}
+
+\subsection{Mathématiques majeure}
+
+Beaucoup d'exercices tombés cette année semblent venir des feuilles de TD de MPSI et de MP de LLG. Les TD de MPSI sont disponibles ici : \url{https://www.bourrigan.fr/hx3.html}
+
+Je n'ai pas eu le temps de finir mes deux exercices. L'examinateur n'était pas très bavard, mais il finissait quand même par m'aider lorsque je bloquais.
+
+\bigskip
+
+\textbf{Exercice 1}
+
+On dispose de $(2n+1)$ petits cailloux tels que, quel que soit le caillou enlevé, les $2n$ restants peuvent se répartir en deux tas de $n$ cailloux de même masse totale.
+
+Montrer que tous les petits cailloux ont la même masse.
+
+\vspace{0.3cm}
+
+Soit $M \in \mathcal{M}_n(\mathbb{R})$ définie par
+\[
+\begin{cases}
+ m_{i,j}\in\{1,-1\} & \text{si } i\neq j, \\
+ m_{i,j}=0 & \text{sinon.}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item On suppose ici que $n$ est pair. Montrer qu'il existe $A \in \mathcal{M}_n(\mathbb{Z})$ telle que
+    \[
+    M^2 = I_n + 2A.
+    \]
+
+    \item Montrer que $M$ est inversible.
+
+    \item On ne suppose plus $n$ pair. Montrer que, de manière générale,
+    \[
+    \dim(\ker M) \leq 1.
+    \]
+\end{enumerate}
+
+\bigskip
+
+\textbf{Exercice 2}
+
+Soit $\lambda > 0$ et
+\[
+Z \sim \mathcal{P}(\lambda).
+\]
+
+On définit la variable aléatoire $X$ par
+\[
+X =
+\begin{cases}
+\dfrac{Z}{3} & \text{si } Z \text{ est un multiple de } 3, \\
+0 & \text{sinon.}
+\end{cases}
+\]
+
+Calculer $\mathbb{E}[X]$.
+
+\bigskip
+
+\textit{Voici les exercices de la personne passée juste avant moi :} \\
+
+\textbf{Exercice 1}
+
+Soit $Y_n \sim \mathcal{G}\!\left(\frac{1}{n}\right)$.
+Calculer, pour tout $x \in \mathbb{R}$,
+\[
+\lim_{n \to +\infty} \mathbb{P}\!\left(\frac{Y_n}{n} \le x\right).
+\]
+
+\textbf{Exercice 2}
+
+Soient $A, B \in M_2(\mathbb{Z})$.
+On suppose que, pour tout $k \in \{0,1,2,3,4\}$, la matrice $A+kB$ est inversible, avec inverse appartenant à $\mathcal{M}_2(\mathbb{Z})$.
+Montrer que $A+5B$ est inversible, avec inverse appartenant à $\mathcal{M}_2(\mathbb{Z})$.
+\newpage
+
+\subsection{Physique mineure}
+
+Je n'avais pas du tout révisé l'hydrodynamique, donc j'ai eu une petite surprise en découvrant l'exercice 1. Au final, les souvenirs de L2 ont suffi, mais cela montre qu'il ne faut rien laisser de côté. L'oral était intéressant car j'avais l'impression d'avoir une vraie discussion avec l'examinateur.
+
+\textbf{Exercice 1 : Champ magnétique et maelstrom}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Physique/Badis/Oraux_physique_exos/exo_1.pdf}
+\end{figure}
+
+Soit un cylindre de rayon $a$, d'axe $(O_z)$, considéré comme infini. Il est traversé par un vecteur densité volumique de courant $\vec{j}$ uniforme à l'intérieur du cylindre.
+
+\begin{enumerate}
+    \item Rappeler le théorème d'Ampère en régime statique, puis en donner la preuve.
+    \item Calculer le champ magnétique $\vec{B}$ dans tout l'espace.
+\end{enumerate}
+
+Le but est maintenant d'étudier le comportement d'un maelstrom. On réalise l'analogie suivante :
+\[
+\vec{v} \leftrightarrow \vec{B}
+\qquad\text{et}\qquad
+\vec{\Omega} \leftrightarrow \mu_0 \vec{j}.
+\]
+
+\begin{enumerate}
+    \item Calculer le champ de vitesse $\vec{v}$ dans tout l'espace et en donner le graphe. Justifier la terminologie d'«\ oeil du cyclone ».
+\end{enumerate}
+
+\begin{quote}
+\small
+\textit{Remarque :} l'examinateur en a profité pour me poser quelques questions générales d'hydrodynamique : descriptions lagrangienne et eulérienne, conservation de la masse, définition d'un fluide incompressible, équation de Navier--Stokes et signification de chacun des termes.
+\end{quote}
+
+\begin{enumerate}[resume]
+    \item Rappeler la loi de Bernoulli ainsi que ses hypothèses d'application. Calculer le champ de pression $P(r,z)$ lorsque $r \gg a$.
+\end{enumerate}
+
+Il restait une question dont je ne me souviens plus exactement. Il s'agissait de calculer le champ de pression dans le cas général. J'ai dit à l'examinateur que cela faisait penser au principe fondamental de l'hydrostatique ; il m'a alors demandé la généralisation en dynamique, et j'ai compris qu'il fallait utiliser Euler. J'ai répondu que je ne me souvenais plus d'Euler, mais que je pouvais repartir de Navier--Stokes pour retrouver l'équation d'Euler, ce qu'il a accepté. Il m'a ensuite fait passer au second exercice.
+
+\newpage
+
+\textbf{Exercice 2 : Mécanique du point --- choc et système couplé}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Physique/Badis/Oraux_physique_exos/exo_2.pdf}
+\end{figure}
+
+Soit une masse $M_1$ de masse $m_1$, lancée avec une vitesse initiale $\vec{v}_0 = v_0 \vec{u}_x$ vers un système composé d'une masse $M_2$ (de masse $m_2$) reliée à un ressort de constante de raideur $k$. La masse $M_2$ est initialement au repos et le système peut se déplacer librement sur un axe horizontal sans aucun frottement.
+
+\begin{enumerate}
+    \item Trouver l'élongation maximale $a_{\max}$ du ressort.
+    \item Si, après le choc, les masses $M_1$ et $M_2$ continuent de se déplacer dans la même direction, donner $v_1$ et $v_2$, les vitesses finales des masses.
+\end{enumerate}
+
+\subsection{ADS mathématiques}
+
+\textit{Sujet :} \url{https://images.math.cnrs.fr/freeze/Le-chant-de-la-Terre.html}
+
+J'avais peur d'avoir un sujet très long, mais le sujet était finalement assez court et intéressant.
+L'examinatrice a posé beaucoup de questions de topologie. Il est important d'avoir des exemples et des contre-exemples en tête :
+
+\begin{enumerate}
+    \item Une fonction continue en un point est-elle continue au voisinage de ce point ?
+    \item Peut-on trouver une fonction continue sur $\mathbb{R}\setminus \mathbb{Q}$ mais discontinue sur $\mathbb{Q}$ ?
+    \item Peut-on trouver une fonction continue sur $\mathbb{Q}$ mais discontinue sur $\mathbb{R}\setminus \mathbb{Q}$ ?
+    \item Donner, en dimension infinie, des normes non équivalentes.
+\end{enumerate}
+
+\subsection{Culture générale scientifique}
+
+\textit{Sujet :} \url{https://lejournal.cnrs.fr/nos-blogs/focus-sciences/quand-les-mains-nous-apprennent-a-parler}
+
+Pour l'entretien de motivation, l'examinateur m'a demandé de clarifier certains points de ma lettre de motivation. Il faut la connaître et être capable de justifier ce qu'on y a écrit.
+
+Il est aussi important d'avoir un projet assez clair : pourquoi l'X, que veut-on étudier à l'X, et que veut-on faire après l'X.
+
+\subsection{Français}
+
+\textit{Sujet :} \url{https://agora.qc.ca/documents/rochefoucauld--portrait_de_la_rochefoucauld_par_lui-meme_par_francois_de_la_rochefoucauld}
+
+Le texte ne m'a pas vraiment inspiré, et je ne crois pas avoir réussi à respecter le temps demandé pour la dissertation.
+J'avais révisé les oeuvres du bac de français, ainsi que quelques références de philosophie et de cinéma, pour avoir un minimum de culture littéraire et artistique.
+
+Dans les faits, l'examinateur n'est quasiment pas revenu sur ma dissertation. Il s'agissait surtout de questions de culture générale, littéraire et philosophique.
+Attention aux oeuvres que l'on choisit de citer : il peut demander la date, ce que l'on sait de l'auteur, ou encore le contexte historique et littéraire.
+
+\subsection{Anglais}
+
+Je ne retrouve pas la vidéo. Il s'agissait d'un reportage sur le marché du travail américain à la suite de la politique de tarifs du président Trump.
+
+Les examinatrices étaient très gentilles. La partie discussion s'est surtout axée sur l'IA et la robotique, comme souvent. Si tu parles assez bien anglais et que tu t'informes un minimum sur l'actualité, l'épreuve devrait bien se passer.
 
 \end{document}
